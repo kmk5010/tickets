@@ -1,20 +1,42 @@
 <template>
-  <div class="d-flex flex-row p-2 justify-content-center">
-    <b-card>
-      <b-tabs pills card>
-        <b-tab title="In progress">
-        </b-tab>
-        <b-tab title="Queued">
-        </b-tab>
-        <b-tab title="Pending">
-        </b-tab>
-      </b-tabs>
-    </b-card>
-  </div>
+  <b-container class="pt-4">
+    <b-row align-h="center">
+      <b-col>
+        <b-row align-h="start" class="mb-2">
+          <b-button-group>
+            <b-button class="btn btn-outline-light block">In Progress</b-button>
+            <b-button class="btn btn-outline-light block">Queued</b-button>
+            <b-button class="btn btn-outline-light">Pending</b-button>
+          </b-button-group>
+        </b-row>
+        <b-row>
+          <b-col align="start">
+            <ticketlist></ticketlist>
+            <ticketlist></ticketlist>
+          </b-col>
+        </b-row>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
+import ticketlist from '@/components/TicketList.vue'
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    ticketlist
+  }
 }
 </script>
+
+<style scoped>
+.col {
+  padding-left: 0px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: 0px;
+}
+
+</style>
