@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'ticketlist'
+  name: 'ticketitem'
 }
 </script>
 

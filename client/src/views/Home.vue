@@ -11,8 +11,8 @@
         </b-row>
         <b-row>
           <b-col align="start">
-            <ticketlist></ticketlist>
-            <ticketlist></ticketlist>
+            <ticketitem></ticketitem>
+            <ticketitem></ticketitem>
           </b-col>
         </b-row>
       </b-col>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import ticketlist from '@/components/TicketList.vue'
+import ticketitem from '@/components/TicketItem.vue'
 export default {
   name: 'home',
   components: {
-    ticketlist
+    ticketitem
   }
 }
 </script>
