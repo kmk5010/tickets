@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import api from '@/api'
 export default {
   name: 'login',
   data () {
@@ -24,7 +25,15 @@ export default {
   },
   methods: {
     Login () {
-      console.log('login')
+      console.log('logging in')
+      api.authenticate({ strategy: 'local', username: this.username, password: this.password })
+        .then(response => {
+          console.log(response)
+          this.$store.commit('login')
+          this.$router.push('/')
+        }).catch(error => {
+          console.log(error)
+        })
     }
   }
 }
