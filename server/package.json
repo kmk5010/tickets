@@ -7,7 +7,10 @@
   "keywords": [
     "feathers"
   ],
-  "author": {},
+  "author": {
+    "name": "oooo0000oooo",
+    "email": "35052074+kmk5010@users.noreply.github.com"
+  },
   "contributors": [],
   "bugs": {},
   "directories": {
@@ -26,27 +29,15 @@
     "mocha": "mocha test/ --recursive --exit"
   },
   "dependencies": {
-    "@feathersjs/authentication": "^2.1.13",
-    "@feathersjs/authentication-jwt": "^2.0.7",
-    "@feathersjs/authentication-local": "^1.2.7",
     "@feathersjs/configuration": "^2.0.4",
     "@feathersjs/errors": "^3.3.4",
     "@feathersjs/express": "^1.2.7",
     "@feathersjs/feathers": "^3.2.3",
     "@feathersjs/socketio": "^3.2.7",
     "compression": "^1.7.3",
-    "cors": "^2.8.5",
-    "feathers-nedb": "^3.1.0",
+    "cors": "^2.8.4",
     "helmet": "^3.15.0",
-    "nedb": "^1.8.0",
     "serve-favicon": "^2.5.0",
     "winston": "^3.1.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.10.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.8",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.2"
   }
 }

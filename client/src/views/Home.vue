@@ -1,17 +1,23 @@
 <template>
-  <div class="container-fluid">
-    <div class="d-flex mx-4 mt-4">
-      <b-button class="btn btn-light btn-block mt-2 mr-2">In Progress</b-button>
-      <b-button class="btn btn-light btn-block mt-2 mr-2">Queued</b-button>
-      <b-button class="btn btn-light btn-block mt-2">Pending</b-button>
-    </div>
-    <div class="d-flex flex-column mt-4 mx-4">
-      <ticketitem class="mb-2"></ticketitem>
-      <ticketitem class="mb-2"></ticketitem>
-      <ticketitem class="mb-2"></ticketitem>
-      <ticketitem class="mb-2"></ticketitem>
-    </div>
-  </div>
+  <b-container class="pt-4">
+    <b-row align-h="center">
+      <b-col>
+        <b-row align-h="start" class="mb-2">
+          <b-button-group>
+            <b-button class="btn btn-outline-light block">In Progress</b-button>
+            <b-button class="btn btn-outline-light block">Queued</b-button>
+            <b-button class="btn btn-outline-light">Pending</b-button>
+          </b-button-group>
+        </b-row>
+        <b-row>
+          <b-col align="start">
+            <ticketitem></ticketitem>
+            <ticketitem></ticketitem>
+          </b-col>
+        </b-row>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -25,9 +31,12 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 800px;
+.col {
+  padding-left: 0px;
+  padding-right: 15px;
 }
+.row {
+  margin-left: 0px;
+}
+
 </style>

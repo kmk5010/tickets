@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-list-group>
-      <b-list-group-item class="d-flex justify-content-between list-group-item-success" href="login">
+      <b-list-group-item class="d-flex justify-content-between list-group-item-success" href="#">
         <b-container>
           <b-row>
             <b-col align="start"><h5 class="font-weight-bold">Title Here</h5></b-col>
@@ -24,4 +24,7 @@ export default {
 </script>
 
 <style>
+.list-group {
+  max-width: 700px;
+}
 </style>

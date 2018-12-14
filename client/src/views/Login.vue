@@ -1,7 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <br>
-    <b-card title="Login" class="mt-4 rounded-10">
+  <div class="container">
+    <b-card title="Login" class="m-4 rounded-10">
       <b-form>
         <label class="m-2 float-sm-left">Username</label>
         <b-form-input id="username" type="email" v-model="username"></b-form-input>
@@ -31,9 +30,5 @@ export default {
 </script>
 
 <style>
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 400px;
-}
+
 </style>
