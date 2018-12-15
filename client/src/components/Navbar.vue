@@ -9,19 +9,19 @@
   <b-collapse is-nav id="nav_collapse">
 
     <b-navbar-nav>
-      <b-nav-item href="new">Create Ticket</b-nav-item>
+      <b-nav-item href="new" v-if="this.$store.state.loggedIn">Create Ticket</b-nav-item>
     </b-navbar-nav>
 
     <!-- Right aligned nav items -->
     <b-navbar-nav class="ml-auto">
-      <b-nav-item-dropdown right>
+      <b-nav-item-dropdown right v-if="this.$store.state.loggedIn">
         <!-- Using button-content slot -->
         <template slot="button-content">
           <em>User</em>
         </template>
         <b-dropdown-item href="account">My Account</b-dropdown-item>
         <b-dropdown-item href="admin">Admin</b-dropdown-item>
-        <b-dropdown-item href="#">Signout</b-dropdown-item>
+        <b-dropdown-item @click="logout">Signout</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
 
@@ -31,8 +31,16 @@
 </template>
 
 <script>
+import api from '@/api'
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  methods: {
+    logout () {
+      api.logout()
+      this.$store.commit('logout')
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 

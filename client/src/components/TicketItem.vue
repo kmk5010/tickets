@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-list-group>
-      <b-list-group-item class="d-flex justify-content-between list-group-item-success" href="login">
+      <b-list-group-item class="d-flex justify-content-between list-group-item-success">
         <b-container>
           <b-row>
             <b-col align="start"><h5 class="font-weight-bold">Title Here</h5></b-col>

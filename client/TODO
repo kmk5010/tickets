@@ -1,0 +1,8 @@
+1. get username and roles
+2. verify jwt on every route change
+3. create tickets service/functionality
+4. add new ticket page
+5. change ticket colors based on triage
+6. make the top home buttons work right
+7. add user page
+8. add admin page

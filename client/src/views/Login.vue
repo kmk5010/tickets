@@ -7,6 +7,7 @@
         <b-form-input id="username" type="email" v-model="username"></b-form-input>
         <label class="m-2 float-sm-left">Password</label>
         <b-form-input id="password" type="password" v-model="password"></b-form-input>
+        <div class="mt-2 text-danger">{{ errorMsg }}<br></div>
         <b-button variant="dark" class="m-2" @click="Login">Login</b-button>
       </b-form>
     </b-card>
@@ -20,7 +21,8 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      errorMsg: ''
     }
   },
   methods: {
@@ -32,6 +34,9 @@ export default {
           this.$store.commit('login')
           this.$router.push('/')
         }).catch(error => {
+          this.username = ''
+          this.password = ''
+          this.errorMsg = error.message
           console.log(error)
         })
     }

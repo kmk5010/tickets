@@ -10,6 +10,16 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  const loggedIn = store.state.loggedIn
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  if (requiresAuth && !loggedIn) {
+    next('/login')
+  } else {
+    next()
+  }
+})
+
 new Vue({
   router,
   store,

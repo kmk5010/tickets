@@ -5,14 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    loggedIn: false
+    loggedIn: !!localStorage.getItem('feathers-jwt')
   },
   mutations: {
-    login () {
-      this.state.loggedIn = true
+    login (state) {
+      state.loggedIn = true
     },
-    logout () {
-      this.state.loggedIn = false
+    logout (state) {
+      state.loggedIn = false
     }
   },
   actions: {

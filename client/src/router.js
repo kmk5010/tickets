@@ -16,7 +16,8 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: { requiresAuth: true }
     },
     {
       path: '/login',
@@ -26,22 +27,26 @@ export default new Router({
     {
       path: '/new',
       name: 'newticket',
-      component: NewTicket
+      component: NewTicket,
+      meta: { requiresAuth: true }
     },
     {
       path: '/ticket',
       name: 'ticket',
-      component: ViewTicket
+      component: ViewTicket,
+      meta: { requiresAuth: true }
     },
     {
       path: '/account',
       name: 'account',
-      component: User
+      component: User,
+      meta: { requiresAuth: true }
     },
     {
       path: '/admin',
       name: 'admin',
-      component: Admin
+      component: Admin,
+      meta: { requiresAuth: true }
     }
   ]
 })
