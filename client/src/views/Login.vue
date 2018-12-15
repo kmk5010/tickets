@@ -16,6 +16,7 @@
 
 <script>
 import api from '@/api'
+import userService from '@/services/userService'
 export default {
   name: 'login',
   data () {
@@ -27,11 +28,11 @@ export default {
   },
   methods: {
     Login () {
-      console.log('logging in')
       api.authenticate({ strategy: 'local', username: this.username, password: this.password })
         .then(response => {
           console.log(response)
           this.$store.commit('login')
+          this.$store.commit('getUserInfo', userService.userInfo(response.accessToken))
           this.$router.push('/')
         }).catch(error => {
           this.username = ''

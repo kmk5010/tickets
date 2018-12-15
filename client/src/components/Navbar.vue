@@ -17,10 +17,10 @@
       <b-nav-item-dropdown right v-if="this.$store.state.loggedIn">
         <!-- Using button-content slot -->
         <template slot="button-content">
-          <em>User</em>
+          <em>{{ this.$store.state.username }}</em>
         </template>
         <b-dropdown-item href="account">My Account</b-dropdown-item>
-        <b-dropdown-item href="admin">Admin</b-dropdown-item>
+        <b-dropdown-item href="admin" v-if="this.$store.state.roles.indexOf('admin') !== -1">Admin</b-dropdown-item>
         <b-dropdown-item @click="logout">Signout</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
