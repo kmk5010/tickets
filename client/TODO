@@ -1,6 +1,8 @@
-2. create tickets service/functionality
-3. add new ticket page
+2. add auto incrementing id to tickets
+3. add some new ticket form validation
 4. change ticket colors based on triage
-5. make the top home buttons work right
+5. make the ticket triage buttons look/work right
 6. add user page
 7. add admin page
+8. add search functionality
+9. maybe add some graphs or some shit
