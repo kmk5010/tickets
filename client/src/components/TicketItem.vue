@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-list-group>
-      <b-list-group-item class="d-flex justify-content-between list-group-item-success">
+      <b-list-group-item class="d-flex justify-content-between" :style="{ backgroundColor: setBackgroundColor}">
         <b-container>
           <b-row>
             <b-col align="start"><h5 class="font-weight-bold">{{ title }}</h5></b-col>
@@ -20,7 +20,18 @@
 <script>
 export default {
   name: 'ticketitem',
-  props: ['title', 'update', 'updateUser', 'updateTime']
+  props: ['title', 'update', 'updateUser', 'updateTime', 'priority'],
+  computed: {
+    setBackgroundColor: function () {
+      if (this.$props.priority === 'low') {
+        return 'lightgreen'
+      } else if (this.$props.priority === 'medium') {
+        return 'orange'
+      } else {
+        return 'red'
+      }
+    }
+  }
 }
 </script>
 

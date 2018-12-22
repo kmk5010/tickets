@@ -4,7 +4,9 @@ export default {
     await api.authenticate()
     let tickets = await api.service('tickets').find({
       query: {
-        status: 'queued'
+        status: {
+          $ne: 'closed'
+        }
       }
     })
     return tickets.data
