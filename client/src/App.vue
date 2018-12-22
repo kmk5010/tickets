@@ -30,6 +30,7 @@ html, body {
   color: #2c3e50;
   height: 100%;
   background-color: #292E33;
+  overflow: auto;
 }
 #nav {
   padding: 30px;

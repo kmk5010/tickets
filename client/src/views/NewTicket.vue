@@ -22,10 +22,15 @@
         </b-form-group>
       </b-container>
     </b-card>
-      <b-card class="mt-4 rounded-10" title="Computer Information">
+      <b-card class="mt-4 mb-4 rounded-10" title="Computer Information">
       <b-container>
         <b-form-group>
           <b-row class="mt-2">
+            <b-col>
+              <b-form-select v-model="priority" :options="priorityOptions"/>
+            </b-col>
+          </b-row>
+          <b-row class="mt-4">
             <b-col>
               <b-form-input id="model" type="text" placeholder="Model" v-model="model"></b-form-input>
             </b-col>
@@ -57,22 +62,31 @@ export default {
       email: '',
       model: '',
       serial: '',
-      issue: ''
+      issue: '',
+      priority: null,
+      priorityOptions: [
+        { value: null, text: 'Priority' },
+        { value: 'low', text: 'Low' },
+        { value: 'medium', text: 'Medium' },
+        { value: 'high', text: 'High' }
+      ]
     }
   },
   methods: {
     submitTicket () {
-      api.authenticate()
-      api.service('tickets').create({
-        firstName: this.firstName,
-        lastName: this.lastName,
-        phone: this.phone,
-        email: this.email,
-        model: this.model,
-        serial: this.serial,
-        issue: this.issue,
-        status: 'queued'
-      })
+      api.authenticate().then(() =>
+        api.service('tickets').create({
+          firstName: this.firstName,
+          lastName: this.lastName,
+          phone: this.phone,
+          email: this.email,
+          model: this.model,
+          serial: this.serial,
+          issue: this.issue,
+          status: 'queued',
+          priority: this.priority,
+          createdBy: this.$store.state.username
+        }))
       this.$router.push('/')
     }
   }
