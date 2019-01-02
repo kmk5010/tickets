@@ -1,7 +1,9 @@
 <template>
   <div>
     <b-list-group>
-      <b-list-group-item class="d-flex justify-content-between" :style="{ backgroundColor: setBackgroundColor}">
+      <b-list-group-item class="d-flex justify-content-between"
+        :style="{ backgroundColor: setBackgroundColor}"
+        @click="$router.push({ name: 'ticket', params: { id: $props.id } })">
         <b-container>
           <b-row>
             <b-col align="start"><h5 class="font-weight-bold">{{ title }}</h5></b-col>
@@ -20,7 +22,7 @@
 <script>
 export default {
   name: 'ticketitem',
-  props: ['title', 'update', 'updateUser', 'updateTime', 'priority'],
+  props: ['title', 'update', 'updateUser', 'updateTime', 'priority', 'id'],
   computed: {
     setBackgroundColor: function () {
       if (this.$props.priority === 'low') {
@@ -35,5 +37,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.list-group-item:hover {
+  cursor: pointer;
+}
 </style>

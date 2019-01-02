@@ -24,7 +24,8 @@
             :update="ticket.issue"
             :updateUser="ticket.createdBy"
             :updateTime="ticket.createdAt"
-            :priority="ticket.priority">
+            :priority="ticket.priority"
+            :id="ticket._id">
           </ticketitem>
         </span>
         <br>
@@ -51,7 +52,7 @@ export default {
     }
   },
   mounted () {
-    ticketService.getTickets()
+    ticketService.getAllTickets()
       .then(data => {
         this.tickets = data
         this.ticketsByStatus = data.filter(tickets => tickets.status === this.currentStatus)

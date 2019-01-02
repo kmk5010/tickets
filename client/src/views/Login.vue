@@ -30,7 +30,6 @@ export default {
     Login () {
       api.authenticate({ strategy: 'local', username: this.username, password: this.password })
         .then(response => {
-          console.log(response)
           this.$store.commit('login')
           this.$store.commit('getUserInfo', userService.userInfo(response.accessToken))
           this.$router.push('/')

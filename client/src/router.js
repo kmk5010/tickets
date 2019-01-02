@@ -31,7 +31,7 @@ export default new Router({
       meta: { requiresAuth: true }
     },
     {
-      path: '/ticket',
+      path: '/ticket/:id',
       name: 'ticket',
       component: ViewTicket,
       meta: { requiresAuth: true }

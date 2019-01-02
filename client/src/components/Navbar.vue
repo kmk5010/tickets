@@ -9,7 +9,7 @@
   <b-collapse is-nav id="nav_collapse">
 
     <b-navbar-nav>
-      <b-nav-item href="new" v-if="this.$store.state.loggedIn">Create Ticket</b-nav-item>
+      <b-nav-item href="/new" v-if="this.$store.state.loggedIn">Create Ticket</b-nav-item>
     </b-navbar-nav>
 
     <!-- Right aligned nav items -->
@@ -19,8 +19,8 @@
         <template slot="button-content">
           <em>{{ this.$store.state.username }}</em>
         </template>
-        <b-dropdown-item href="account">My Account</b-dropdown-item>
-        <b-dropdown-item href="admin" v-if="this.$store.state.roles.indexOf('admin') !== -1">Admin</b-dropdown-item>
+        <b-dropdown-item href="/account">My Account</b-dropdown-item>
+        <b-dropdown-item href="/admin" v-if="this.$store.state.roles.indexOf('admin') !== -1">Admin</b-dropdown-item>
         <b-dropdown-item @click="logout">Signout</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
