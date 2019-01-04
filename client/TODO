@@ -1,9 +1,9 @@
-1. add auto incrementing id to tickets
-2. add some new ticket form validation
-3. make the ticket updates service
-4. make the update time stuff work
-5. add view ticket page/functionality
-6. add user page
-7. add admin page
-8. add search functionality
-9. maybe add some graphs or some shit
+add auto incrementing id to tickets
+add some new ticket form validation
+make the ticket updates service
+make the update time stuff work
+add view ticket page/functionality
+add user page
+add admin page
+add search functionality
+maybe add some graphs or some shit

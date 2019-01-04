@@ -12,7 +12,7 @@ export default new Vuex.Store({
   },
   mutations: {
     login (state) {
-      state.loggedIn = true
+      state.loggedIn = !!localStorage.getItem('feathers-jwt')
     },
     logout (state) {
       state.loggedIn = false

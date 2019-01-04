@@ -11,6 +11,7 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
+  store.commit('login')
   const loggedIn = store.state.loggedIn
   const roles = store.state.roles.indexOf('admin')
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
